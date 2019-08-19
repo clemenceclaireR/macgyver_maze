@@ -73,7 +73,8 @@ class Level:
         avoiding placing them on a wall
         items are placed randomly on empty ground
         """
-        line = col = 0
+        line = 0
+        col = 0
         while self.floor[line][col] != floor_type:
             line = randint(0, 14)
             col = randint(0, 14)

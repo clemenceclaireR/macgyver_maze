@@ -90,9 +90,9 @@ class Sprite:
         place the characters on a border empty ground
         if one of the border supposedly empty ground is already occupied by the other character, start again
         """
-        if level.floor[self.line][self.col] == self.name:
-            self.line, self.col = level.find_entry()
-        else:
+        self.line, self.col = level.find_entry()
+        level.floor[self.line][self.col] == self.name
+        if level.floor[self.line][self.col] != self.name:
             self.line, self.col = level.find_entry() # genère toujours des erreurs qq fois : à regler
             level.floor[self.line][self.col] = self.name
 
