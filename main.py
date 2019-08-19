@@ -19,7 +19,7 @@ def load_maze_file():
     """
     Import maze model from extern file
     """
-    maze_file = "labyrinthe.txt"
+    maze_file = "maze.txt"
     return Level(maze_file)
 
 
@@ -96,7 +96,8 @@ def main():
 
     while playing_game:
         clock = pygame.time.Clock()
-        clock.tick(60)  # Maximum 60 loops by second
+        # number of loops per second
+        clock.tick(60)  
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
