@@ -83,8 +83,8 @@ def main():
     place_items(maze)
     maze.design_items()
     # Initalization of the hero and villain
-    macgyver = Sprite("macgyver")
-    guardian = Sprite("guardian")
+    macgyver = Characters("macgyver")
+    guardian = Characters("guardian")
     macgyver.place(maze)
     guardian.place(maze)
     maze.design_sprite()

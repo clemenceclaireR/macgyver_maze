@@ -7,7 +7,7 @@ from pygame.locals import *
 from graphic import *
 
 
-class Sprite:
+class Characters:
     """
     attributes line and col show the position of the sprites
     name shows the given sprite
