@@ -110,7 +110,7 @@ class Character:
             self.inventory[i] = floor
 
 
-class Items:
+class Item:
 
     def __init__(self, name):
 
