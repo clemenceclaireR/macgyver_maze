@@ -27,9 +27,9 @@ def place_items(level):
     """
     Initialization of the three items and place it in the level
     """
-    ether = Items("ether")
-    needle = Items("needle")
-    plastic_tube = Items("tube")
+    ether = Item("ether")
+    needle = Item("needle")
+    plastic_tube = Item("tube")
     ether.place(level)
     needle.place(level)
     plastic_tube.place(level)
