@@ -7,7 +7,7 @@ from tools import Tools
 from illustrations import *
 
 
-class Characters:
+class Character:
     """
     attributes line and col show the position of the sprites
     name shows the given sprite
