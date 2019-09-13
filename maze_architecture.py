@@ -2,7 +2,7 @@
 # coding: utf-8
 
 from random import randint
-from classes import *
+from models import *
 
 
 class Level:
