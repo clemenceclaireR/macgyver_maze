@@ -3,6 +3,7 @@
 
 from random import randint
 from models import *
+from tools_heroes import Tools
 
 
 class Level:
@@ -17,14 +18,14 @@ class Level:
 
     def design_sprite(self):
         folder = "macgyver_ressources/ressource/"
-        self.picture["macgyver"] = pygame.image.load(folder + macgyver_img).convert_alpha()
-        self.picture["guardian"] = pygame.image.load(folder + guardian_img).convert_alpha()
+        self.picture[Heroes.MACGYVER.value] = pygame.image.load(folder + macgyver_img).convert_alpha()
+        self.picture[Heroes.GUARDIAN.value] = pygame.image.load(folder + guardian_img).convert_alpha()
 
     def design_items(self):
         folder = "macgyver_ressources/ressource/"
-        self.picture["ether"] = pygame.image.load(folder + ether_img).convert_alpha()
-        self.picture["needle"] = pygame.image.load(folder + needle_img).convert_alpha()
-        self.picture["plastictube"] = pygame.image.load(folder + plastictube_img).convert_alpha()
+        self.picture[Tools.ETHER.value] = pygame.image.load(folder + ether_img).convert_alpha()
+        self.picture[Tools.NEEDLE.value] = pygame.image.load(folder + needle_img).convert_alpha()
+        self.picture[Tools.TUBE.value] = pygame.image.load(folder + plastictube_img).convert_alpha()
 
     def display(self, screen):
         """
