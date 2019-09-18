@@ -9,4 +9,11 @@ class Tools(Enum):
     ETHER = "ether"
     NEEDLE = "needle"
     TUBE = "tube"
+    SLOT = "slot"
+
+
+class Heroes(Enum):
+    MACGYVER = "macgyver"
+    GUARDIAN = "guardian"
+    SLOT = "slot"
 
