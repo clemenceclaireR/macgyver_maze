@@ -3,7 +3,7 @@
 
 import pygame.display
 from pygame.locals import *
-from tools import Tools
+from tools_heroes import *
 from illustrations import *
 
 
@@ -17,17 +17,19 @@ class Character:
         self.line = 1
         self.col = 1
         self.name = name
-        self.inventory = ["slot", "slot", "slot", "slot"]
+        self.inventory = [Tools.SLOT.value, Tools.SLOT.value, Tools.SLOT.value, Tools.SLOT.value]
 
     def fight(self, enemy):
         """
         Check hero's inventory when meeting enemy
         """
-        if enemy == "guardian":
+        win_string = "win"
+        lose_string = "lose"
+        if enemy == Heroes.GUARDIAN.value:
             if Tools.SYRINGE.value in self.inventory:
-                return "win"
+                return win_string
             else:
-                return "lose"
+                return lose_string
         else:
             return ""
 
@@ -54,12 +56,12 @@ class Character:
                 Tools.TUBE.value in self.inventory:
             folder = "macgyver_ressources/ressource/"
             message = pygame.image.load(folder + make_syringe_img).convert()
-            message_x = sprite_size * 5
-            message_y = sprite_size * 6
+            message_x = sprite_size * (0 + 1)
+            message_y = sprite_size * (15 + 1.5)
             self.inventory = [Tools.SYRINGE.value]
             window.blit(message, (message_x, message_y))
 
-        pygame.display.flip()
+            pygame.display.flip()
 
     def move(self, level, key=None):
         """
@@ -80,8 +82,8 @@ class Character:
             dy = +1
         if key == K_LEFT and x > 0:
             dx = -1
-        if level.floor[y + dy][x + dx] == "guardian":
-            return self.fight("guardian")
+        if level.floor[y + dy][x + dx] == Heroes.GUARDIAN.value:
+            return self.fight(Heroes.GUARDIAN.value)
         elif level.floor[y + dy][x + dx] != "#":
             self.search_items(level, y + dy, x + dx)
             level.floor[y][x] = '.'
@@ -103,9 +105,9 @@ class Character:
         items are placed in order
         """
         floor = level.floor[line][col]
-        if floor in ["ether", "needle", "tube"]:
+        if floor in [Tools.NEEDLE.value, Tools.ETHER.value, Tools.TUBE.value]:
             i = 0
-            while self.inventory[i] != "slot" and i < 4:
+            while self.inventory[i] != Tools.SLOT.value and i < 4:
                 i += 1
             self.inventory[i] = floor
 
