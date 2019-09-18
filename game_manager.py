@@ -27,9 +27,9 @@ def place_items(level):
     """
     Initialization of the three items and place it in the level
     """
-    ether = Item("ether")
-    needle = Item("needle")
-    plastic_tube = Item("tube")
+    ether = Item(Tools.ETHER.value)
+    needle = Item(Tools.NEEDLE.value)
+    plastic_tube = Item(Tools.TUBE.value)
     ether.place(level)
     needle.place(level)
     plastic_tube.place(level)
@@ -44,10 +44,12 @@ def end_game(event, screen):
     message = None
     message_x = sprite_size * 5
     message_y = sprite_size * 6
+    win_string = "win"
+    lose_string = "lose"
     folder = "macgyver_ressources/ressource/"
-    if event == "win":
+    if event == win_string:
         message = pygame.image.load(folder + you_win_img).convert()
-    if event == "lose":
+    if event == lose_string:
         message = pygame.image.load(folder + you_lose_img).convert()
     screen.blit(message, (message_x, message_y))
     pygame.display.flip()
