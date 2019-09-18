@@ -2,7 +2,12 @@
 
 #### **Description**
 
-This project has been developped for an Openclassrooms project. 
+This project has been developped for an Openclassrooms project.
+It uses the Pygame library, which provides numerous tools to create games quickly and easily.
+
+Learn more about Pygame here :
+https://www.pygame.org/
+
 The game's purpose is for MacGyver to escape from the maze and confront the evil guardian.
 But he can't fight him with empty hands !
 He has to find several tools in the maze and see what he can arrange with it ...
