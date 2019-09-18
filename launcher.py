@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from game_manager import *
+from tools_heroes import *
 
 
 def main():
@@ -19,8 +20,8 @@ def main():
     place_items(maze)
     maze.design_items()
     # Initalization of the hero and villain
-    macgyver = Character("macgyver")
-    guardian = Character("guardian")
+    macgyver = Character(Heroes.MACGYVER.value)
+    guardian = Character(Heroes.GUARDIAN.value)
     macgyver.place(maze)
     guardian.place(maze)
     maze.design_sprite()
