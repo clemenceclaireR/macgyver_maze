@@ -16,7 +16,7 @@ def main():
     # initialization of the maze
     maze = load_maze_file()
     maze.display(game_window)
-    # initalization of the place_items
+    # place items into the maze
     place_items(maze)
     maze.design_items()
     # Initalization of the hero and villain
