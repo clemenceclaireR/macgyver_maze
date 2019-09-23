@@ -73,7 +73,8 @@ class Character:
         """
         x = self.col
         y = self.line
-        dx = dy = 0
+        dx = 0
+        dy = 0
         if key == K_UP and y > 0:
             dy = -1
         if key == K_RIGHT and x < 14:
