@@ -16,6 +16,18 @@ class Level:
         self.load_level(filename)
         self.picture = dict()
 
+    def load_level(self, filename):
+        """
+        read the maze file composed of "." for the ground and "#" for the walls
+        each line is appended as a list to the floor list
+        """
+        try:
+            with open(filename, "r") as maze_file:
+                for line in range(15):
+                    self.floor[line] = maze_file.readline().strip().split(" ")
+        except pygame.error:
+            raise SystemExit(pygame.get_error())
+
     def design_sprite(self):
         folder = "macgyver_ressources/ressource/"
         self.picture[Heroes.MACGYVER.value] = pygame.image.load(folder + macgyver_img).convert_alpha()
@@ -53,20 +65,6 @@ class Level:
 
         pygame.display.flip()
 
-        def find_entry(self):
-        """
-        find an empty ground "." on the border of the maze :
-        there are two places where the characters can be placed
-        """
-        for line in [0, 14]:
-            for column in range(0, 14):
-                if self.floor[line][column] == '.':
-                    return line, column
-        for column in [0, 14]:
-            for line in range(0, 14):
-                if self.floor[line][column] == '.':
-                    return line, column
-
     def find_empty_floor(self, floor_type):
         """
         find a ground identical to the given parameter
@@ -80,15 +78,20 @@ class Level:
             line = randint(0, 14)
             column = randint(0, 14)
         return line, column
-    
-    def load_level(self, filename):
+
+    def find_entry(self):
         """
-        read the maze file composed of "." for the ground and "#" for the walls
-        each line is appended as a list to the floor list
+        find an empty ground "." on the border of the maze :
+        there are two places where the characters can be placed
         """
-        with open(filename, "r") as maze_file:
-            for line in range(15):
-                self.floor[line] = maze_file.readline().strip().split(" ")
+        for line in [0, 14]:
+            for column in range(0, 14):
+                if self.floor[line][column] == '.':
+                    return line, column
+        for column in [0, 14]:
+            for line in range(0, 14):
+                if self.floor[line][column] == '.':
+                    return line, column
 
 
 if __name__ == "__main__":
