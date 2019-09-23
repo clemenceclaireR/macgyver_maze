@@ -23,7 +23,9 @@ macgyver_img = "MacGyver.png"
 guardian_img = "gardian.png"
 slot_img = "square.png"
 
-you_win_img = "youwin.png" #266x76 : in sprite -> (38*7 / 38*2) 38*6 =  38
+#266x76 : in sprite -> (38*7 / 38*2) 38*6 =  38
+you_win_img = "youwin.png" 
+#190x38 : in sprite -> (38*5 / 38*1)
 you_lose_img = "youlose.png"
 
-make_syringe_img = "syringe_panel.png" #190x38 : in sprite -> (38*5 / 38*1)
+make_syringe_img = "syringe_panel.png" 
