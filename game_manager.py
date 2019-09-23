@@ -17,7 +17,7 @@ def display_window(width, height):
 
 def load_maze_file():
     """
-    Import maze model from extern file
+    Import maze model from external file
     """
     maze_file = "maze.txt"
     return Level(maze_file)
