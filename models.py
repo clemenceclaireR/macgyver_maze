@@ -4,7 +4,7 @@
 import pygame.display
 from pygame.locals import *
 from tools_heroes import *
-from illustrations import *
+from images import *
 
 
 class Character:
