@@ -4,6 +4,7 @@
 from random import randint
 from models import *
 from tools_heroes import Tools
+import sys
 
 
 class Level:
