@@ -53,19 +53,19 @@ class Level:
 
         pygame.display.flip()
 
-    def find_entry(self):
+        def find_entry(self):
         """
         find an empty ground "." on the border of the maze :
         there are two places where the characters can be placed
         """
         for line in [0, 14]:
-            for col in range(0, 14):
-                if self.floor[line][col] == '.':
-                    return line, col
-        for col in [0, 14]:
+            for column in range(0, 14):
+                if self.floor[line][column] == '.':
+                    return line, column
+        for column in [0, 14]:
             for line in range(0, 14):
-                if self.floor[line][col] == '.':
-                    return line, col
+                if self.floor[line][column] == '.':
+                    return line, column
 
     def find_empty_floor(self, floor_type):
         """
@@ -75,12 +75,12 @@ class Level:
         items are placed randomly on empty ground
         """
         line = 0
-        col = 0
-        while self.floor[line][col] != floor_type:
+        column = 0
+        while self.floor[line][column] != floor_type:
             line = randint(0, 14)
-            col = randint(0, 14)
-        return line, col
-
+            column = randint(0, 14)
+        return line, column
+    
     def load_level(self, filename):
         """
         read the maze file composed of "." for the ground and "#" for the walls
